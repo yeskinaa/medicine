@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/form_style.css" />
+    <title>Форма зворотнього зв'язку</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Адреса</div>
+            <div class="text-one">м. Миколаїв</div>
+            <div class="text-two">Велика Морська, 74/3</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Телефон</div>
+            <div class="text-one">+380-800-307-733</div>
+            <div class="text-two">+380-800-308-733</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">support@gmail.com</div>
+            <div class="text-two">admin@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Надішліть нам повідомлення</div>
+          <p>
+            Маєте зауваження або побажання? Заповніть форму нижче!
+          </p>
+          <form action="send_mail.php" name="form" method="POST">
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Введіть ваше ім'я"
+                name="name"
+                id="name"
+                data-reg="^[А-Яа-яёЁЇїІіЄєҐґ]+$"
+              />
+              <label for="name">Тільки українські або російські літери</label>
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Введіть Email"
+                name="email"
+                id="email"
+                data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
+              />
+              <label for="email">У форматі: your-name@gmail.com</label>
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Введіть номер телефону"
+                name="phone"
+                id="phone"
+                data-reg="(?<=(^|\n)(38)?)(050|066|095|099|063|073|093|067|096|097|098)\d{7}(?=\r?\n|$)"
+              />
+              <label for="phone">У форматі: 380000000000 чи 0**0000000</label>
+            </div>
+            <div class="input-box message-box">
+              <textarea placeholder="Повідомлення..." name="message"></textarea>
+            </div>
+            <div class="button">
+              <input type="submit" id="button" value="Надіслати" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/fce9a50d02.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
